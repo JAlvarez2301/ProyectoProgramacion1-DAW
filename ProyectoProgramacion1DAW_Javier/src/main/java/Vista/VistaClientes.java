@@ -391,7 +391,7 @@ public class VistaClientes extends javax.swing.JFrame{
            ps = conexion.prepareStatement("SELECT * FROM Clientes WHERE IDCliente =?");
            ps.setInt(1 , Integer.parseInt(Caja_Buscar.getText()));
            rs = ps.executeQuery();
-           if(rs.next()){
+          
            while (rs.next()) {
                JOptionPane.showMessageDialog(null, "ID: " + Integer.parseInt(rs.getString("IDCliente"))
                        + "\nNombre: " + rs.getString("Nombre")
@@ -421,8 +421,6 @@ public class VistaClientes extends javax.swing.JFrame{
 );
                HistorialClientesBuscados.add(cli); //Añadimos el objeto Clientes a nuestro arraylist clientes
 
-           }}else{
-               JOptionPane.showMessageDialog(null, "No existe información acerca ese ID");
            }
            
        } catch (SQLException ex) {
